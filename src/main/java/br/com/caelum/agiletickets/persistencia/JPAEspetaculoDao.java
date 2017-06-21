@@ -7,8 +7,8 @@ import javax.persistence.EntityManager;
 
 import br.com.caelum.agiletickets.domain.Agenda;
 import br.com.caelum.agiletickets.domain.Relogio;
-import br.com.caelum.agiletickets.models.Espetaculo;
 import br.com.caelum.agiletickets.models.Sessao;
+import br.com.caelum.agiletickets.models.sessao.strategy.Espetaculo;
 
 public class JPAEspetaculoDao implements Agenda {
 

@@ -2,9 +2,9 @@ package br.com.caelum.agiletickets.domain.precos;
 
 import java.math.BigDecimal;
 
-import br.com.caelum.agiletickets.models.Espetaculo;
 import br.com.caelum.agiletickets.models.Sessao;
 import br.com.caelum.agiletickets.models.TipoDeEspetaculo;
+import br.com.caelum.agiletickets.models.sessao.strategy.Espetaculo;
 
 public class SessaoTestDataBuilder {
 

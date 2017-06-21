@@ -2,8 +2,8 @@ package br.com.caelum.agiletickets.domain;
 
 import java.util.List;
 
-import br.com.caelum.agiletickets.models.Espetaculo;
 import br.com.caelum.agiletickets.models.Sessao;
+import br.com.caelum.agiletickets.models.sessao.strategy.Espetaculo;
 
 public interface Agenda {
 

@@ -13,6 +13,8 @@ import org.hibernate.annotations.Type;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 
+import br.com.caelum.agiletickets.models.sessao.strategy.Espetaculo;
+
 @Entity
 public class Sessao {
 

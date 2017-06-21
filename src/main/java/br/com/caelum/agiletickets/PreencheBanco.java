@@ -8,10 +8,10 @@ import javax.persistence.Persistence;
 
 import org.joda.time.DateTime;
 
-import br.com.caelum.agiletickets.models.Espetaculo;
 import br.com.caelum.agiletickets.models.Estabelecimento;
 import br.com.caelum.agiletickets.models.Sessao;
 import br.com.caelum.agiletickets.models.TipoDeEspetaculo;
+import br.com.caelum.agiletickets.models.sessao.strategy.Espetaculo;
 
 public class PreencheBanco {
 
