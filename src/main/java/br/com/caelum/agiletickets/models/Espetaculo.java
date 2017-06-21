@@ -2,6 +2,8 @@ package br.com.caelum.agiletickets.models;
 
 import static com.google.common.collect.Lists.newArrayList;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -15,6 +17,7 @@ import javax.persistence.OneToMany;
 
 import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
+import org.joda.time.Period;
 
 @Entity
 public class Espetaculo {
@@ -98,7 +101,37 @@ public class Espetaculo {
      */
 	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) {
 		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
+		int qtd = getDias(inicio, fim, periodicidade); 
+		
+		return gerarSessoes(inicio, fim, qtd, periodicidade);
+	}
+
+	private List<Sessao> gerarSessoes(LocalDate inicio, LocalDate fim, int qtd,
+			Periodicidade periodicidade) {
+		// TODO Auto-generated method stub
 		return null;
+	}
+
+	private int getDias(LocalDate inicio, LocalDate fim,
+			Periodicidade periodicidade) {
+		int qtd = 0;
+		switch (periodicidade){
+			case DIARIA : {
+				
+				java.time.Period p = java.time.Period.between(java.time.LocalDate.ofEpochDay(inicio.getEra()),  
+						java.time.LocalDate.ofEpochDay(fim.getEra()));
+				qtd = p.getDays();
+				break; //diferença de dias
+			}
+			case SEMANAL: {
+				java.time.Period p = java.time.Period.between(java.time.LocalDate.ofEpochDay(inicio.getEra()),  
+						java.time.LocalDate.ofEpochDay(fim.getEra()));
+				qtd = p.getDays() / 7;
+				break;
+			}
+		}
+		
+		return qtd;
 	}
 	
 	public boolean Vagas(int qtd, int min)

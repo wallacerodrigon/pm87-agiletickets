@@ -111,5 +111,9 @@ public class Sessao {
 	public BigDecimal getPreco() {
 		return preco;
 	}
+
+	public double getPercentualDisponivel() {
+		return getIngressosDisponiveis() / getTotalIngressos().doubleValue();
+	}
 	
 }
