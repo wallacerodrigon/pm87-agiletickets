@@ -17,7 +17,7 @@ public class PreencheBanco {
 
 	// ALUNO: Não apague essa classe
 	public static void main(String[] args) {
-		
+		//teste
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("default");
 		
 		EntityManager manager = factory.createEntityManager();
