@@ -101,7 +101,7 @@ public class Espetaculo {
      * 
      * Repare que a data da primeira sessao é sempre a data inicial.
      */
-	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) {
+	public List<Sessao> criaSessoes(LocalDate inicio, LocalDate fim, LocalTime horario, Periodicidade periodicidade) throws Exception {
 		// ALUNO: Não apague esse metodo. Esse sim será usado no futuro! ;)
 		return periodicidade.getGerador().gerarSessoes(this, inicio, fim, horario);
 	}

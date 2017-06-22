@@ -100,7 +100,7 @@ public class EspetaculoTest {
 	 */
 	
 	@Test
-	public void deveCriarSessaoDiariaInicioFimIguais(){
+	public void deveCriarSessaoDiariaInicioFimIguais() throws Exception {
 		LocalDate dataInicio = new LocalDate();
 		LocalDate dataFim    = new LocalDate();
 		LocalTime hora       = org.joda.time.LocalTime.parse("20:00:00");
@@ -118,7 +118,7 @@ public class EspetaculoTest {
 	}
 	
 	@Test
-	public void deveCriarSessaoDiariaInicioFimDistintas(){
+	public void deveCriarSessaoDiariaInicioFimDistintas() throws Exception {
 		LocalDate dataInicio = new LocalDate();
 		LocalDate dataFim    = new LocalDate(dataInicio.plusDays(6));
 		LocalTime hora       = org.joda.time.LocalTime.parse("21:00:00");
@@ -136,7 +136,7 @@ public class EspetaculoTest {
 	}	
 	
 	@Test
-	public void deveCriarSessaoSemanalInicioFimIguais(){
+	public void deveCriarSessaoSemanalInicioFimIguais() throws Exception {
 		LocalDate dataInicio = new LocalDate();
 		LocalDate dataFim    = new LocalDate();
 		LocalTime hora       = org.joda.time.LocalTime.parse("21:00:00");
@@ -151,7 +151,7 @@ public class EspetaculoTest {
 	}	
 	
 	@Test
-	public void deveCriarSessaoSemanalInicioFimDistintas(){
+	public void deveCriarSessaoSemanalInicioFimDistintas() throws Exception {
 		LocalDate dataInicio = new LocalDate();
 		LocalDate dataFim    = new LocalDate(dataInicio.plusDays(20));
 		LocalTime hora       = org.joda.time.LocalTime.parse("21:00:00");
@@ -167,31 +167,25 @@ public class EspetaculoTest {
 		
 	}		
 	
-	@Test
-	public void naoDeveCriarSessaoDiariaComDataFimMaiorDataInicio(){
+	@Test(expected=IllegalArgumentException.class)
+	public void naoDeveCriarSessaoDiariaComDataFimMaiorDataInicio() throws Exception {
 		LocalDate dataInicio    = new LocalDate(new LocalDate().plusDays(2));
 		LocalDate dataFim = new LocalDate();
 		LocalTime hora       = org.joda.time.LocalTime.parse("21:00:00");
 		Periodicidade periodicidade = Periodicidade.DIARIA;
 		
-		
-		Espetaculo showIvete =new Espetaculo();
-		List<Sessao> sessoes = showIvete.criaSessoes(dataInicio, dataFim, hora, periodicidade);
-		
-		Assert.assertEquals(sessoes.size(), 0);
+		new Espetaculo()
+			.criaSessoes(dataInicio, dataFim, hora, periodicidade);
 	}		
 	
-	@Test
-	public void naoDeveCriarSessaoSemanalComDataFimMaiorDataInicio(){
+	@Test(expected=IllegalArgumentException.class)
+	public void naoDeveCriarSessaoSemanalComDataFimMaiorDataInicio() throws Exception {
 		LocalDate dataInicio    = new LocalDate(new LocalDate().plusDays(2));
 		LocalDate dataFim = new LocalDate();
 		LocalTime hora       = org.joda.time.LocalTime.parse("21:00:00");
 		Periodicidade periodicidade = Periodicidade.SEMANAL;
 		
-		
-		Espetaculo showIvete =new Espetaculo();
-		List<Sessao> sessoes = showIvete.criaSessoes(dataInicio, dataFim, hora, periodicidade);
-		
-		Assert.assertEquals(sessoes.size(), 0);
+		new Espetaculo()
+			.criaSessoes(dataInicio, dataFim, hora, periodicidade);
 	}	
 }

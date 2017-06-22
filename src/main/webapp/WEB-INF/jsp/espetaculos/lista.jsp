@@ -62,7 +62,7 @@
 						<td>${espetaculo.descricao}</td>
 						<td>${espetaculo.tipo}</td>
 						<td>
-							<a href="<c:url value="/espetaculo/${espetaculo.id}/sessoes"/>">Criar sessões</a>
+							<a href="<c:url value="/espetaculo/${espetaculo.id}/sessoes"/>">Sessões</a>
 						</td>
 					</tr>
 				</c:forEach>

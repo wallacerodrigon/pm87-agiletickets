@@ -24,10 +24,10 @@ public abstract class AbstractGeradorSessao implements IGeradorSessoesPeriodicid
 	 */
 	@Override
 	public List<Sessao> gerarSessoes(Espetaculo espetaculo, LocalDate inicio, LocalDate fim,
-			LocalTime horario) {
+			LocalTime horario) throws Exception {
 		
 		if (! isPeriodoValido(inicio, fim)){
-			return new ArrayList<Sessao>();
+			throw new IllegalArgumentException();
 		} else {
 			return criarSessoes(espetaculo, inicio, fim, horario);	
 			

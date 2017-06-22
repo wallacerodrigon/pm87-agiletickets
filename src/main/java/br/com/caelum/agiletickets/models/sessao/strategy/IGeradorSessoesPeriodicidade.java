@@ -9,6 +9,6 @@ import br.com.caelum.agiletickets.models.Sessao;
 
 public interface IGeradorSessoesPeriodicidade {
 
-	List<Sessao> gerarSessoes(Espetaculo espetaculo, LocalDate inicio, LocalDate fim, LocalTime horario);
+	List<Sessao> gerarSessoes(Espetaculo espetaculo, LocalDate inicio, LocalDate fim, LocalTime horario) throws Exception;
 	
 }
