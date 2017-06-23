@@ -15,11 +15,12 @@ import br.com.caelum.agiletickets.models.sessao.strategy.Espetaculo;
 
 public class PreencheBanco {
 
-	// ALUNO: Não apague essa classe
-	public static void main(String[] args) {
-		//teste
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("default");
+	
+	public PreencheBanco(){
 		
+		EntityManagerFactory factory = Persistence
+				.createEntityManagerFactory("default");
+
 		EntityManager manager = factory.createEntityManager();
 
 		manager.getTransaction().begin();
@@ -41,7 +42,7 @@ public class PreencheBanco {
 		for (int i = 0; i < 10; i++) {
 			Sessao sessao = new Sessao();
 			sessao.setEspetaculo(espetaculo);
-			sessao.setInicio(new DateTime().plusDays(7+i));
+			sessao.setInicio(new DateTime().plusDays(7 + i));
 			sessao.setDuracaoEmMinutos(60 * 3);
 			sessao.setTotalIngressos(100);
 			sessao.setIngressosReservados(i < 5 ? 100 - i : 0);
@@ -52,6 +53,12 @@ public class PreencheBanco {
 		manager.getTransaction().commit();
 		manager.close();
 		factory.close();
+	}
+	
+	// ALUNO: Não apague essa classe
+	public static void main(String[] args) {
+		//teste
+		new PreencheBanco();
 	}
 	
 }

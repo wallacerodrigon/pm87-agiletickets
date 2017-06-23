@@ -34,9 +34,9 @@ public class EstabelecimentoTest {
 	public void aoAdicionarUmEstabelecimentoDeveMostraLoNaTabela() throws Exception {
 		estabelecimentos.abreListagem();
 
-		estabelecimentos.adicioneEstabelecimento("Caelum", "R. Vergueiro, 3185");
+		estabelecimentos.adicioneEstabelecimento("JK Shopping", "QNM 34 M Norte");
 
-		estabelecimentos.ultimaLinhaDeveConter("Caelum", "R. Vergueiro, 3185");
+		estabelecimentos.ultimaLinhaDeveConter("JK Shopping", "QNM 34 M Norte");
 	}
 
 	@Test
